@@ -63,4 +63,3 @@ mpl.plot(period_week_data, type='candle', style='charles',
         figratio=(12,6)
         )
 mpl.show()
-#1111
