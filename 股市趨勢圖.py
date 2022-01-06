@@ -34,5 +34,4 @@ mat.legend(loc='upper left',shadow=True, fontsize='6')
 mat.title(sid+'台積電-年度股市趨勢圖')
 
 mat.show()
-
-
+#111
