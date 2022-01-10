@@ -21,7 +21,7 @@ end = datetime.date.today()
 sid = '2330'
 #設定均線
 MA_1 = 'MA5'
-MA_2 = 'MA20'
+MA_2 = 'MA60'
 #取得股票資料 API
 stock_yf = yf.download(sid+'.Tw',start,end)
 print(stock_yf.tail(10))
@@ -35,7 +35,6 @@ stock_yf[MA_2] = abstract.MA(stock_yf['close'],timeperiod=60) # MA_2
 stock_yf['close'].plot(figsize=(16,8),label='2330')
 stock_yf[MA_1].plot(secondary_y=True, figsize=(16, 8), label=MA_1)
 stock_yf[MA_2].plot(secondary_y=True, figsize=(16, 8), label=MA_2)
-
 
 #顯示側標
 plt.legend([MA_1,MA_2],loc='upper left', shadow=False, fontsize='x-large')

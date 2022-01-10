@@ -21,12 +21,14 @@ yf.pdr_override()
 stock_yf = yf.download(sid+'.TW', start, end)
 print(stock_yf.tail(10))
 
-#線型圖，收盤價，5日平均、20日平均、60日平均
-stock_yf['Adj Close'].plot(figsize=(16,8))
-stock_yf['Adj Close'].rolling(window=5).mean().plot(figsize=(16,8), label = '5_Day_Mean(周)')
-stock_yf['Adj Close'].rolling(window=20).mean().plot(figsize=(16,8), label = '20_Day_Mean(月)')
-stock_yf['Adj Close'].rolling(window=60).mean().plot(figsize=(16,8), label = '60_Day_Mean(季)')
-stock_yf['Adj Close'].rolling(window=120).mean().plot(figsize=(16,8), label = '120_Day_Mean(半年)')
+#線型圖，收盤價，5日平均、20日平均、60日平均 ,
+#Adjusted close 簡單來說,就是調整價格能更好的反應出股票實際的價格，
+#因為收盤價本身可能不能完全反應股票的價值，比如現金分紅，股票分紅，股票分割。
+stock_yf['Adj Close'].plot(figsize=(16,8),label = sid)
+stock_yf['Adj Close'].rolling(window=5).mean().plot(figsize=(16,8), label = '5日均線(周)')
+stock_yf['Adj Close'].rolling(window=20).mean().plot(figsize=(16,8), label = '20日均線(月)')
+stock_yf['Adj Close'].rolling(window=60).mean().plot(figsize=(16,8), label = '60日均線(季)')
+stock_yf['Adj Close'].rolling(window=120).mean().plot(figsize=(16,8), label = '120日均線(半年)')
 #顯示側標
 mat.legend(loc='upper left',shadow=True, fontsize='6')
 
