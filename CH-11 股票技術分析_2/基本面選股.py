@@ -13,7 +13,7 @@ df['本益比'] = df['本益比'].apply(pd.to_numeric, errors='coerce').fillna(0
 df['本益比'] = df['本益比'].astype(float)
 df['殖利率(%)'] = df['殖利率(%)'].apply(pd.to_numeric, errors='coerce').fillna(0.0)
 df['殖利率(%)'] = df['殖利率(%)'].astype(float)
-print(df)
+
 
 df1 = df['本益比'] >= 0.1
 df2 = df['本益比'] <= 8
