@@ -10,7 +10,7 @@ start = datetime.datetime.now() - datetime.timedelta(days=90)
 end = datetime.date.today()
 
 #設定爬蟲股票代號
-sid = '2330'  
+sid = '2324'  
 
 #取得股票資料
 stock_yf = yf.download(sid+'.TW', start, end)
