@@ -1,7 +1,5 @@
-from types import prepare_class
 import numpy as np
 import pandas as pd
-from sklearn.base import RegressorMixin
 from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 
@@ -15,29 +13,30 @@ drink_sales = np.array([7.7, 6.2, 9.3, 8.4,
                         6.5, 8.4])
 
 X = pd.DataFrame(temperatures, columns=["Temperature"])
-taget = pd.DataFrame(drink_sales, columns=["Drink_sales"])
-y = taget["Drink_sales"]
+target = pd.DataFrame(drink_sales, columns=["Drink_sales"])
+y = target["Drink_sales"]
 
 lm = LinearRegression()
-X = X.values
+# X = X.values #解決warning
 lm.fit(X, y)
 print("迴歸係數 :", lm.coef_)
 print("截距 :", lm.intercept_)
 
+
 #預測氣溫26, 30度的業績
-new_temperatures = pd.DataFrame(np.array([26,30]))
+new_temperatures = pd.DataFrame(np.array([26,30]),columns=["Temperature"])
 predicted_sales = lm.predict(new_temperatures)
 print('預測氣溫26, 30度的業績 :')
 print(predicted_sales)
 
-# plt.scatter(temperatures,drink_sales)
-# Regression_sales = lm.predict(X)
-# plt.plot(temperatures, Regression_sales, color="blue")
-# plt.plot(new_temperatures, prepare_sales, color="red", marker="0", markersize=10)
+plt.scatter(temperatures,drink_sales)
+regression_sales = lm.predict(X)
+plt.plot(temperatures, regression_sales, color="blue")
+plt.plot(new_temperatures, predicted_sales, color="red", marker="o", markersize=10)
+plt.show()
 
 #使用 Sklearn LinearRegression
 # 線性回歸簡單來說，就是將複雜的資料數據，擬和至一條直線上，就能方便預測未來的資料。接下來我們一樣使用房價預測資料集，並使用 Sklearn 提供的 LinearRegression 來求解。
-
 # Parameters:
 
 # fit_intercept: 是否有截距，如果沒有則直線過原點。
