@@ -9,7 +9,7 @@ weight = np.array([50,60,65,65,70,75,80,85,90,81])
 X = pd.DataFrame(waist_height, columns=["Waist", "Height"])
 target = pd.DataFrame(weight, columns=["Weight"])
 y = target["Weight"]
-print(Weight)
+
 lm = LinearRegression()
 lm.fit(X,y)
 print("迴歸係數 :",lm.coef_)
