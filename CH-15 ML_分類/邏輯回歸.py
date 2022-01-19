@@ -7,7 +7,7 @@ titanic = pd.read_csv(r'CH-15 ML_分類\titanic.csv')
 titanic['SexCode'] = titanic['sex'].map({'female':0,'male':1}).astype(int)
 print(titanic.info())
 
-X = pd.DataFrame([titanic['pclass'],titanic['SexCode'], titanic['age']]).T
+X = pd.DataFrame([titanic['age'],titanic['SexCode'], titanic['sibsp']]).T
 y = titanic['survived']
 
 logistic = linear_model.LogisticRegression(penalty='l2', solver='lbfgs')
