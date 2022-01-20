@@ -22,5 +22,5 @@ XTrain, XTest, yTrain, yTest = train_test_split(X, y, test_size=0.33, random_sta
 dtree = tree.DecisionTreeClassifier(max_depth=18)
 dtree.fit(XTrain, yTrain)
 print("準確度",dtree.score(XTest,yTest))
-print(dtree.predict(XTest))
-print(yTest.values)
+# print(dtree.predict(XTest))
+# print(yTest.values)
