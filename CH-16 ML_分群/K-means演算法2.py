@@ -13,10 +13,17 @@ k = 3
 kmeans = cluster.KMeans(n_clusters=k, random_state=12)
 kmeans.fit(X)
 
+#查看data和欄位資訊
 print(X)
+#查看key值
 print(iris.keys())
-
+print("K-maens classification:")
 print(kmeans.labels_)
+#修正標籤錯誤位置
+print("K-maens (Fix) classification:")
+pred_y = np.choose(kmeans.labels_, [1,0,2]).astype(np.int64)
+print(pred_y)
+print("Real classification:")
 print(y)
 
 colmap = np.array(["r","g","y"])
@@ -36,3 +43,4 @@ plt.xlabel("Petal Lenght")
 plt.ylabel("Petal Width")
 plt.title("K-means Classification")
 plt.show()
+
