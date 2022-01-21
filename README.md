@@ -4,7 +4,9 @@
 Numpy、
 Pandas、
 Csv檔案蒐集整理、
-股市技術實作分析。
+股市技術實作分析、
+scikit-learn - 機器學習、
+Matplotlib。
 
 所使用的股市模組有 :
 mplfinance、yfinance。
