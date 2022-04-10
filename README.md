@@ -22,4 +22,3 @@
 ## 所使用的股市模組有 :
 1. mplfinance
 2. yfinance
-
