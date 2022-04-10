@@ -21,6 +21,8 @@ plt.scatter(XTrain[:,0],XTrain[:,1], c=yTrain)
 # print(XTrain[:,0])   取全部二維資料的第0項 也就是第一行
 # print(XTrain[:])     取全部二維資料
 
+# 支援向量機(SVM) 是一個監督學習演算法
+
 clf = SVC()
 clf.fit(XTrain,yTrain)
 
